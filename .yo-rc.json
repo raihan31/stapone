@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "stapone",
+    "packageName": "com.rocketscience.stapone",
+    "packageFolder": "com/rocketscience/stapone",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "useSass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": true,
+    "rememberMeKey": "b9ba2774e1c0a33c747a17a74f8f4aa6e71ea401",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}
