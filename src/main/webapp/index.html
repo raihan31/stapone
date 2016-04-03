@@ -21,16 +21,14 @@
         <!--[if lt IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div>
+        <!--<div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div>-->
         <div ui-view="navbar" ng-cloak=""></div>
         <div class="container">
             <div class="well" ui-view="content"></div>
-
-            <div class="footer">
-                <p translate="footer">This is your footer</p>
-            </div>
         </div>
-
+        <div class="footer">
+            <p translate="footer">This is your footer</p>
+        </div>
         <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -158,6 +156,76 @@
     <script src="scripts/app/admin/tracker/tracker.js"></script>
     <script src="scripts/app/admin/tracker/tracker.controller.js"></script>
     <script src="scripts/components/tracker/tracker.service.js"></script>
+    <script src="scripts/app/entities/profile/profile.js"></script>
+    <script src="scripts/app/entities/profile/profile.controller.js"></script>
+    <script src="scripts/app/entities/profile/profile-dialog.controller.js"></script>
+    <script src="scripts/app/entities/profile/profile-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/profile/profile-detail.controller.js"></script>
+    <script src="scripts/components/entities/profile/profile.service.js"></script>
+    <script src="scripts/components/entities/profile/profile.search.service.js"></script>
+    <script src="scripts/app/entities/department/department.js"></script>
+    <script src="scripts/app/entities/department/department.controller.js"></script>
+    <script src="scripts/app/entities/department/department-dialog.controller.js"></script>
+    <script src="scripts/app/entities/department/department-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/department/department-detail.controller.js"></script>
+    <script src="scripts/components/entities/department/department.service.js"></script>
+    <script src="scripts/components/entities/department/department.search.service.js"></script>
+    <script src="scripts/app/entities/category/category.js"></script>
+    <script src="scripts/app/entities/category/category.controller.js"></script>
+    <script src="scripts/app/entities/category/category-dialog.controller.js"></script>
+    <script src="scripts/app/entities/category/category-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/category/category-detail.controller.js"></script>
+    <script src="scripts/components/entities/category/category.service.js"></script>
+    <script src="scripts/components/entities/category/category.search.service.js"></script>
+    <script src="scripts/app/entities/products/products.js"></script>
+    <script src="scripts/app/entities/products/products.controller.js"></script>
+    <script src="scripts/app/entities/products/products-dialog.controller.js"></script>
+    <script src="scripts/app/entities/products/products-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/products/products-detail.controller.js"></script>
+    <script src="scripts/components/entities/products/products.service.js"></script>
+    <script src="scripts/components/entities/products/products.search.service.js"></script>
+    <script src="scripts/app/entities/userReviews/userReviews.js"></script>
+    <script src="scripts/app/entities/userReviews/userReviews.controller.js"></script>
+    <script src="scripts/app/entities/userReviews/userReviews-dialog.controller.js"></script>
+    <script src="scripts/app/entities/userReviews/userReviews-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/userReviews/userReviews-detail.controller.js"></script>
+    <script src="scripts/components/entities/userReviews/userReviews.service.js"></script>
+    <script src="scripts/components/entities/userReviews/userReviews.search.service.js"></script>
+    <script src="scripts/app/entities/orders/orders.js"></script>
+    <script src="scripts/app/entities/orders/orders.controller.js"></script>
+    <script src="scripts/app/entities/orders/orders-dialog.controller.js"></script>
+    <script src="scripts/app/entities/orders/orders-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/orders/orders-detail.controller.js"></script>
+    <script src="scripts/components/entities/orders/orders.service.js"></script>
+    <script src="scripts/components/entities/orders/orders.search.service.js"></script>
+    <script src="scripts/app/entities/orderDetails/orderDetails.js"></script>
+    <script src="scripts/app/entities/orderDetails/orderDetails.controller.js"></script>
+    <script src="scripts/app/entities/orderDetails/orderDetails-dialog.controller.js"></script>
+    <script src="scripts/app/entities/orderDetails/orderDetails-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/orderDetails/orderDetails-detail.controller.js"></script>
+    <script src="scripts/components/entities/orderDetails/orderDetails.service.js"></script>
+    <script src="scripts/components/entities/orderDetails/orderDetails.search.service.js"></script>
+    <script src="scripts/app/entities/catPromotionPhoto/catPromotionPhoto.js"></script>
+    <script src="scripts/app/entities/catPromotionPhoto/catPromotionPhoto.controller.js"></script>
+    <script src="scripts/app/entities/catPromotionPhoto/catPromotionPhoto-dialog.controller.js"></script>
+    <script src="scripts/app/entities/catPromotionPhoto/catPromotionPhoto-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/catPromotionPhoto/catPromotionPhoto-detail.controller.js"></script>
+    <script src="scripts/components/entities/catPromotionPhoto/catPromotionPhoto.service.js"></script>
+    <script src="scripts/components/entities/catPromotionPhoto/catPromotionPhoto.search.service.js"></script>
+    <script src="scripts/app/entities/deptPromotionPhoto/deptPromotionPhoto.js"></script>
+    <script src="scripts/app/entities/deptPromotionPhoto/deptPromotionPhoto.controller.js"></script>
+    <script src="scripts/app/entities/deptPromotionPhoto/deptPromotionPhoto-dialog.controller.js"></script>
+    <script src="scripts/app/entities/deptPromotionPhoto/deptPromotionPhoto-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/deptPromotionPhoto/deptPromotionPhoto-detail.controller.js"></script>
+    <script src="scripts/components/entities/deptPromotionPhoto/deptPromotionPhoto.service.js"></script>
+    <script src="scripts/components/entities/deptPromotionPhoto/deptPromotionPhoto.search.service.js"></script>
+    <script src="scripts/app/entities/proPromotionPhoto/proPromotionPhoto.js"></script>
+    <script src="scripts/app/entities/proPromotionPhoto/proPromotionPhoto.controller.js"></script>
+    <script src="scripts/app/entities/proPromotionPhoto/proPromotionPhoto-dialog.controller.js"></script>
+    <script src="scripts/app/entities/proPromotionPhoto/proPromotionPhoto-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/proPromotionPhoto/proPromotionPhoto-detail.controller.js"></script>
+    <script src="scripts/components/entities/proPromotionPhoto/proPromotionPhoto.service.js"></script>
+    <script src="scripts/components/entities/proPromotionPhoto/proPromotionPhoto.search.service.js"></script>
     <!-- endbuild -->
 </body>
 </html>

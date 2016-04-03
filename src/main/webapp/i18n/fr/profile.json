@@ -1,0 +1,30 @@
+{
+    "staponeApp": {
+        "profile" : {
+            "home": {
+                "title": "Profiles",
+                "createLabel": "Créer un nouveau Profile",
+                "createOrEditLabel": "Créer ou éditer un Profile",
+                "search": "Search for Profile"
+            },
+            "created": "Un nouveau Profile a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Profile avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Profile avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Profile {{ id }} ?"
+            },
+            "detail": {
+                "title": "Profile"
+            },
+            "address": "Address",
+            "contactNo": "ContactNo",
+            "location": "Location",
+            "photo": "Photo",
+            "aboutMe": "AboutMe",
+            "createdAt": "CreatedAt",
+            "UpdatedAt": "UpdatedAt",
+            "user": "User"
+        }
+    }
+}
+

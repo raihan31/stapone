@@ -1,0 +1,110 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myOrdersLabel" translate="staponeApp.orders.home.createOrEditLabel">Create or edit a Orders</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="orders.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.descriptions" for="field_descriptions">Descriptions</label>
+            <input type="text" class="form-control" name="descriptions" id="field_descriptions"
+                    ng-model="orders.descriptions"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.totalPrice" for="field_totalPrice">TotalPrice</label>
+            <input type="number" class="form-control" name="totalPrice" id="field_totalPrice"
+                    ng-model="orders.totalPrice"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.totalProducts" for="field_totalProducts">TotalProducts</label>
+            <input type="number" class="form-control" name="totalProducts" id="field_totalProducts"
+                    ng-model="orders.totalProducts"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.isViewed" for="field_isViewed">IsViewed</label>
+            <input type="checkbox" class="form-control" name="isViewed" id="field_isViewed"
+                    ng-model="orders.isViewed"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.isDelivered" for="field_isDelivered">IsDelivered</label>
+            <input type="checkbox" class="form-control" name="isDelivered" id="field_isDelivered"
+                    ng-model="orders.isDelivered"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.isReceived" for="field_isReceived">IsReceived</label>
+            <input type="checkbox" class="form-control" name="isReceived" id="field_isReceived"
+                    ng-model="orders.isReceived"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.totalMoneyReceived" for="field_totalMoneyReceived">TotalMoneyReceived</label>
+            <input type="number" class="form-control" name="totalMoneyReceived" id="field_totalMoneyReceived"
+                    ng-model="orders.totalMoneyReceived"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.isPaid" for="field_isPaid">IsPaid</label>
+            <input type="checkbox" class="form-control" name="isPaid" id="field_isPaid"
+                    ng-model="orders.isPaid"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.receivedDocument" for="field_receivedDocument">ReceivedDocument</label>
+            <input type="text" class="form-control" name="receivedDocument" id="field_receivedDocument"
+                    ng-model="orders.receivedDocument"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.isCanceled" for="field_isCanceled">IsCanceled</label>
+            <input type="checkbox" class="form-control" name="isCanceled" id="field_isCanceled"
+                    ng-model="orders.isCanceled"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.isTaken" for="field_isTaken">IsTaken</label>
+            <input type="checkbox" class="form-control" name="isTaken" id="field_isTaken"
+                    ng-model="orders.isTaken"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.createdAt" for="field_createdAt">CreatedAt</label>
+            <input type="datetime-local" class="form-control" name="createdAt" id="field_createdAt"
+                    ng-model="orders.createdAt"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.orders.updatedAt" for="field_updatedAt">UpdatedAt</label>
+            <input type="datetime-local" class="form-control" name="updatedAt" id="field_updatedAt"
+                    ng-model="orders.updatedAt"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="staponeApp.orders.ordersProducts" for="field_ordersProducts">ordersProducts</label>
+            <select class="form-control" id="field_ordersProducts" name="ordersProducts" ng-model="orders.ordersProductsId" ng-options="user.id as user.login for user in users">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

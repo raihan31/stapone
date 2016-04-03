@@ -1,0 +1,36 @@
+{
+    "staponeApp": {
+        "orders" : {
+            "home": {
+                "title": "Orderss",
+                "createLabel": "Créer un nouveau Orders",
+                "createOrEditLabel": "Créer ou éditer un Orders",
+                "search": "Search for Orders"
+            },
+            "created": "Un nouveau Orders a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Orders avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Orders avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Orders {{ id }} ?"
+            },
+            "detail": {
+                "title": "Orders"
+            },
+            "descriptions": "Descriptions",
+            "totalPrice": "TotalPrice",
+            "totalProducts": "TotalProducts",
+            "isViewed": "IsViewed",
+            "isDelivered": "IsDelivered",
+            "isReceived": "IsReceived",
+            "totalMoneyReceived": "TotalMoneyReceived",
+            "isPaid": "IsPaid",
+            "receivedDocument": "ReceivedDocument",
+            "isCanceled": "IsCanceled",
+            "isTaken": "IsTaken",
+            "createdAt": "CreatedAt",
+            "updatedAt": "UpdatedAt",
+            "ordersProducts": "OrdersProducts"
+        }
+    }
+}
+

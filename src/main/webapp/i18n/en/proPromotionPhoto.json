@@ -1,0 +1,25 @@
+{
+    "staponeApp": {
+        "proPromotionPhoto" : {
+            "home": {
+                "title": "ProPromotionPhotos",
+                "createLabel": "Create a new ProPromotionPhoto",
+                "createOrEditLabel": "Create or edit a ProPromotionPhoto",
+                "search": "Search for ProPromotionPhoto"
+            },
+            "created": "A new ProPromotionPhoto is created with identifier {{ param }}",
+            "updated": "A ProPromotionPhoto is updated with identifier {{ param }}",
+            "deleted": "A ProPromotionPhoto is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete ProPromotionPhoto {{ id }}?"
+            },
+            "detail": {
+                "title": "ProPromotionPhoto"
+            },
+            "name": "Name",
+            "photo": "Photo",
+            "descriptions": "Descriptions",
+            "products": "Products"
+        }
+    }
+}

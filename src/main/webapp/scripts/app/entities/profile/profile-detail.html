@@ -1,0 +1,87 @@
+
+<div>
+    <h2><span translate="staponeApp.profile.detail.title">Profile</span> {{profile.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="staponeApp.profile.address">Address</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{profile.address}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.profile.contactNo">ContactNo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{profile.contactNo}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.profile.location">Location</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{profile.location}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.profile.photo">Photo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{profile.photo}}</span>
+                    <div>{{profile.photoContentType}}  {{byteSize(profile.photo)}}</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.profile.aboutMe">AboutMe</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{profile.aboutMe}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.profile.createdAt">CreatedAt</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{profile.createdAt | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.profile.UpdatedAt">UpdatedAt</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{profile.UpdatedAt | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.profile.user">user</span>
+                </td>
+                <td>
+                    {{profile.userLogin}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

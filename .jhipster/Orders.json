@@ -1,0 +1,81 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "ordersProducts",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "descriptions",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "totalPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "totalProducts",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "isViewed",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "isDelivered",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "isReceived",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "totalMoneyReceived",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "isPaid",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "receivedDocument",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "isCanceled",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "isTaken",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "createdAt",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldId": 13,
+            "fieldName": "updatedAt",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20160319180345",
+    "dto": "mapstruct",
+    "pagination": "pagination"
+}

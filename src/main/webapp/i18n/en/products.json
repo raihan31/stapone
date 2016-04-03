@@ -1,0 +1,34 @@
+{
+    "staponeApp": {
+        "products" : {
+            "home": {
+                "title": "Productss",
+                "createLabel": "Create a new Products",
+                "createOrEditLabel": "Create or edit a Products",
+                "search": "Search for Products"
+            },
+            "created": "A new Products is created with identifier {{ param }}",
+            "updated": "A Products is updated with identifier {{ param }}",
+            "deleted": "A Products is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Products {{ id }}?"
+            },
+            "detail": {
+                "title": "Products"
+            },
+            "name": "Name",
+            "logo": "Logo",
+            "descriptions": "Descriptions",
+            "measuredUnit": "MeasuredUnit",
+            "unitItem": "UnitItem",
+            "price": "Price",
+            "availableItem": "AvailableItem",
+            "soldItem": "SoldItem",
+            "status": "Status",
+            "sharedNo": "SharedNo",
+            "createdAt": "CreatedAt",
+            "updatedAt": "UpdatedAt",
+            "category": "Category"
+        }
+    }
+}

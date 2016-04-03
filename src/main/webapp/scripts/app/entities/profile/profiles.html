@@ -1,0 +1,85 @@
+<div>
+    <h2 translate="staponeApp.profile.home.title">Profiles</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="profile.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+class="hidden-xs"                        translate="staponeApp.profile.home.createLabel">Create new Profile
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="{{ 'staponeApp.profile.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="search()">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="address"><span translate="staponeApp.profile.address">Address</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contactNo"><span translate="staponeApp.profile.contactNo">ContactNo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="location"><span translate="staponeApp.profile.location">Location</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="photo"><span translate="staponeApp.profile.photo">Photo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="aboutMe"><span translate="staponeApp.profile.aboutMe">AboutMe</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createdAt"><span translate="staponeApp.profile.createdAt">CreatedAt</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="UpdatedAt"><span translate="staponeApp.profile.UpdatedAt">UpdatedAt</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="userLogin"><span translate="staponeApp.profile.user">user</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="profile in profiles track by profile.id">
+                    <td><a ui-sref="profile.detail({id:profile.id})">{{profile.id}}</a></td>
+                    <td>{{profile.address}}</td>
+                    <td>{{profile.contactNo}}</td>
+                    <td>{{profile.location}}</td>
+                    <td>{{profile.photo}}</td>
+                    <td>{{profile.aboutMe}}</td>
+                    <td>{{profile.createdAt | date:'medium'}}</td>
+                    <td>{{profile.UpdatedAt | date:'medium'}}</td>
+                    <td>
+                        {{profile.userLogin}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="profile.detail({id:profile.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="profile.edit({id:profile.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="profile.delete({id:profile.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <uib-pager total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pager>
+</div>

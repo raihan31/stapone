@@ -1,0 +1,53 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "contactNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "photo",
+            "fieldType": "byte[]"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "aboutMe",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "createdAt",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "UpdatedAt",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20160319180319",
+    "dto": "mapstruct",
+    "service": "no",
+    "pagination": "pager"
+}

@@ -1,0 +1,25 @@
+{
+    "staponeApp": {
+        "orderDetails" : {
+            "home": {
+                "title": "OrderDetailss",
+                "createLabel": "Créer un nouveau OrderDetails",
+                "createOrEditLabel": "Créer ou éditer un OrderDetails",
+                "search": "Search for OrderDetails"
+            },
+            "created": "Un nouveau OrderDetails a été créé avec l'identifiant {{ param }}",
+            "updated": "Le OrderDetails avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le OrderDetails avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le OrderDetails {{ id }} ?"
+            },
+            "detail": {
+                "title": "OrderDetails"
+            },
+            "noOfProducts": "NoOfProducts",
+            "orders": "Orders",
+            "products": "Products"
+        }
+    }
+}
+

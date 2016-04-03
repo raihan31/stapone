@@ -7,6 +7,16 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entités",
+                "profile": "Profile",
+                "department": "Department",
+                "category": "Category",
+                "products": "Products",
+                "userReviews": "UserReviews",
+                "orders": "Orders",
+                "orderDetails": "OrderDetails",
+                "catPromotionPhoto": "CatPromotionPhoto",
+                "deptPromotionPhoto": "DeptPromotionPhoto",
+                "proPromotionPhoto": "ProPromotionPhoto",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

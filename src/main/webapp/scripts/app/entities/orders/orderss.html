@@ -1,0 +1,99 @@
+<div>
+    <h2 translate="staponeApp.orders.home.title">Orderss</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="orders.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+class="hidden-xs"                        translate="staponeApp.orders.home.createLabel">Create new Orders
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="{{ 'staponeApp.orders.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="search()">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="descriptions"><span translate="staponeApp.orders.descriptions">Descriptions</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="totalPrice"><span translate="staponeApp.orders.totalPrice">TotalPrice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="totalProducts"><span translate="staponeApp.orders.totalProducts">TotalProducts</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isViewed"><span translate="staponeApp.orders.isViewed">IsViewed</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isDelivered"><span translate="staponeApp.orders.isDelivered">IsDelivered</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isReceived"><span translate="staponeApp.orders.isReceived">IsReceived</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="totalMoneyReceived"><span translate="staponeApp.orders.totalMoneyReceived">TotalMoneyReceived</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isPaid"><span translate="staponeApp.orders.isPaid">IsPaid</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="receivedDocument"><span translate="staponeApp.orders.receivedDocument">ReceivedDocument</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isCanceled"><span translate="staponeApp.orders.isCanceled">IsCanceled</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isTaken"><span translate="staponeApp.orders.isTaken">IsTaken</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createdAt"><span translate="staponeApp.orders.createdAt">CreatedAt</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="updatedAt"><span translate="staponeApp.orders.updatedAt">UpdatedAt</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="ordersProductsLogin"><span translate="staponeApp.orders.ordersProducts">ordersProducts</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="orders in orderss track by orders.id">
+                    <td><a ui-sref="orders.detail({id:orders.id})">{{orders.id}}</a></td>
+                    <td>{{orders.descriptions}}</td>
+                    <td>{{orders.totalPrice}}</td>
+                    <td>{{orders.totalProducts}}</td>
+                    <td>{{orders.isViewed}}</td>
+                    <td>{{orders.isDelivered}}</td>
+                    <td>{{orders.isReceived}}</td>
+                    <td>{{orders.totalMoneyReceived}}</td>
+                    <td>{{orders.isPaid}}</td>
+                    <td>{{orders.receivedDocument}}</td>
+                    <td>{{orders.isCanceled}}</td>
+                    <td>{{orders.isTaken}}</td>
+                    <td>{{orders.createdAt | date:'medium'}}</td>
+                    <td>{{orders.updatedAt | date:'medium'}}</td>
+                    <td>
+                        {{orders.ordersProductsLogin}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="orders.detail({id:orders.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="orders.edit({id:orders.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="orders.delete({id:orders.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>

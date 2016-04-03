@@ -1,0 +1,134 @@
+
+<div>
+    <h2><span translate="staponeApp.orders.detail.title">Orders</span> {{orders.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.descriptions">Descriptions</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.descriptions}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.totalPrice">TotalPrice</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.totalPrice}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.totalProducts">TotalProducts</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.totalProducts}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.isViewed">IsViewed</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.isViewed}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.isDelivered">IsDelivered</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.isDelivered}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.isReceived">IsReceived</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.isReceived}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.totalMoneyReceived">TotalMoneyReceived</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.totalMoneyReceived}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.isPaid">IsPaid</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.isPaid}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.receivedDocument">ReceivedDocument</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.receivedDocument}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.isCanceled">IsCanceled</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.isCanceled}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.isTaken">IsTaken</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.isTaken}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.createdAt">CreatedAt</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.createdAt | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.updatedAt">UpdatedAt</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.updatedAt | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="staponeApp.orders.ordersProducts">ordersProducts</span>
+                </td>
+                <td>
+                    {{orders.ordersProductsLogin}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

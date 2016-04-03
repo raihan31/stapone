@@ -1,0 +1,29 @@
+{
+    "staponeApp": {
+        "userReviews" : {
+            "home": {
+                "title": "UserReviewss",
+                "createLabel": "Créer un nouveau UserReviews",
+                "createOrEditLabel": "Créer ou éditer un UserReviews",
+                "search": "Search for UserReviews"
+            },
+            "created": "Un nouveau UserReviews a été créé avec l'identifiant {{ param }}",
+            "updated": "Le UserReviews avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le UserReviews avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le UserReviews {{ id }} ?"
+            },
+            "detail": {
+                "title": "UserReviews"
+            },
+            "rating": "Rating",
+            "comments": "Comments",
+            "isFavourite": "IsFavourite",
+            "createdAt": "CreatedAt",
+            "updatedAt": "UpdatedAt",
+            "reviews": "Reviews",
+            "products": "Products"
+        }
+    }
+}
+

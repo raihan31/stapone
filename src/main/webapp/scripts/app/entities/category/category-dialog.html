@@ -1,0 +1,84 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myCategoryLabel" translate="staponeApp.category.home.createOrEditLabel">Create or edit a Category</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="category.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.category.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="category.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="setLogo($file, category)">
+            <label class="control-label" translate="staponeApp.category.logo" for="field_logo">Logo</label>
+            <div>
+                <div class="help-block clearfix">
+                    <span class="pull-left">{{category.logoContentType}} {{byteSize(category.logo)}}</span>
+                    <button ng-click="category.logo=null;category.logoContentType=null;"
+                            ng-if="category.logo"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="setLogo($file, category)" translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="logo" id="field_logo"
+                    ng-model="category.logo"
+                     />
+            <input type="hidden" class="form-control" name="logoContentType" id="field_logoContentType"
+                    ng-model="category.logoContentType" />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.category.descriptions" for="field_descriptions">Descriptions</label>
+            <input type="text" class="form-control" name="descriptions" id="field_descriptions"
+                    ng-model="category.descriptions"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.category.createdAt" for="field_createdAt">CreatedAt</label>
+            <input type="datetime-local" class="form-control" name="createdAt" id="field_createdAt"
+                    ng-model="category.createdAt"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="staponeApp.category.updatedAt" for="field_updatedAt">UpdatedAt</label>
+            <input type="datetime-local" class="form-control" name="updatedAt" id="field_updatedAt"
+                    ng-model="category.updatedAt"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="staponeApp.category.department" for="field_department">department</label>
+            <select class="form-control" id="field_department" name="department" ng-model="category.departmentId" ng-options="department.id as department.name for department in departments">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

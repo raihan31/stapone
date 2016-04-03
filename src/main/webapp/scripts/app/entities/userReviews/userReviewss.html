@@ -1,0 +1,87 @@
+<div>
+    <h2 translate="staponeApp.userReviews.home.title">UserReviewss</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="userReviews.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+class="hidden-xs"                        translate="staponeApp.userReviews.home.createLabel">Create new UserReviews
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="{{ 'staponeApp.userReviews.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="search()">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="rating"><span translate="staponeApp.userReviews.rating">Rating</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="comments"><span translate="staponeApp.userReviews.comments">Comments</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isFavourite"><span translate="staponeApp.userReviews.isFavourite">IsFavourite</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createdAt"><span translate="staponeApp.userReviews.createdAt">CreatedAt</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="updatedAt"><span translate="staponeApp.userReviews.updatedAt">UpdatedAt</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reviewsLogin"><span translate="staponeApp.userReviews.reviews">reviews</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="productsName"><span translate="staponeApp.userReviews.products">products</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="userReviews in userReviewss track by userReviews.id">
+                    <td><a ui-sref="userReviews.detail({id:userReviews.id})">{{userReviews.id}}</a></td>
+                    <td>{{userReviews.rating}}</td>
+                    <td>{{userReviews.comments}}</td>
+                    <td>{{userReviews.isFavourite}}</td>
+                    <td>{{userReviews.createdAt | date:'medium'}}</td>
+                    <td>{{userReviews.updatedAt | date:'medium'}}</td>
+                    <td>
+                        {{userReviews.reviewsLogin}}
+                    </td>
+                    <td>
+                        <a ui-sref="products.detail({id:userReviews.productsId})">{{userReviews.productsName}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="userReviews.detail({id:userReviews.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="userReviews.edit({id:userReviews.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="userReviews.delete({id:userReviews.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>

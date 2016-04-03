@@ -1,0 +1,28 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "orders",
+            "otherEntityName": "orders",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "descriptions"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "products",
+            "otherEntityName": "products",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "noOfProducts",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160319180350",
+    "dto": "mapstruct",
+    "pagination": "pagination"
+}

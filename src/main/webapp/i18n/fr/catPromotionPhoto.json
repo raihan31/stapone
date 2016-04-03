@@ -1,0 +1,26 @@
+{
+    "staponeApp": {
+        "catPromotionPhoto" : {
+            "home": {
+                "title": "CatPromotionPhotos",
+                "createLabel": "Créer un nouveau CatPromotionPhoto",
+                "createOrEditLabel": "Créer ou éditer un CatPromotionPhoto",
+                "search": "Search for CatPromotionPhoto"
+            },
+            "created": "Un nouveau CatPromotionPhoto a été créé avec l'identifiant {{ param }}",
+            "updated": "Le CatPromotionPhoto avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le CatPromotionPhoto avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le CatPromotionPhoto {{ id }} ?"
+            },
+            "detail": {
+                "title": "CatPromotionPhoto"
+            },
+            "name": "Name",
+            "photo": "Photo",
+            "descriptions": "Descriptions",
+            "category": "Category"
+        }
+    }
+}
+

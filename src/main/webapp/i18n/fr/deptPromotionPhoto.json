@@ -1,0 +1,26 @@
+{
+    "staponeApp": {
+        "deptPromotionPhoto" : {
+            "home": {
+                "title": "DeptPromotionPhotos",
+                "createLabel": "Créer un nouveau DeptPromotionPhoto",
+                "createOrEditLabel": "Créer ou éditer un DeptPromotionPhoto",
+                "search": "Search for DeptPromotionPhoto"
+            },
+            "created": "Un nouveau DeptPromotionPhoto a été créé avec l'identifiant {{ param }}",
+            "updated": "Le DeptPromotionPhoto avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le DeptPromotionPhoto avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le DeptPromotionPhoto {{ id }} ?"
+            },
+            "detail": {
+                "title": "DeptPromotionPhoto"
+            },
+            "name": "Name",
+            "photo": "Photo",
+            "descriptions": "Descriptions",
+            "department": "Department"
+        }
+    }
+}
+

@@ -1,0 +1,97 @@
+<div>
+    <h2 translate="staponeApp.products.home.title">Productss</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="products.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+class="hidden-xs"                        translate="staponeApp.products.home.createLabel">Create new Products
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="{{ 'staponeApp.products.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="search()">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span translate="staponeApp.products.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="logo"><span translate="staponeApp.products.logo">Logo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="descriptions"><span translate="staponeApp.products.descriptions">Descriptions</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="measuredUnit"><span translate="staponeApp.products.measuredUnit">MeasuredUnit</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="unitItem"><span translate="staponeApp.products.unitItem">UnitItem</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="price"><span translate="staponeApp.products.price">Price</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="availableItem"><span translate="staponeApp.products.availableItem">AvailableItem</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="soldItem"><span translate="staponeApp.products.soldItem">SoldItem</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="status"><span translate="staponeApp.products.status">Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="sharedNo"><span translate="staponeApp.products.sharedNo">SharedNo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createdAt"><span translate="staponeApp.products.createdAt">CreatedAt</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="updatedAt"><span translate="staponeApp.products.updatedAt">UpdatedAt</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="categoryName"><span translate="staponeApp.products.category">category</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="products in productss track by products.id">
+                    <td><a ui-sref="products.detail({id:products.id})">{{products.id}}</a></td>
+                    <td>{{products.name}}</td>
+                    <td>{{products.logo}}</td>
+                    <td>{{products.descriptions}}</td>
+                    <td>{{products.measuredUnit}}</td>
+                    <td>{{products.unitItem}}</td>
+                    <td>{{products.price}}</td>
+                    <td>{{products.availableItem}}</td>
+                    <td>{{products.soldItem}}</td>
+                    <td>{{products.status}}</td>
+                    <td>{{products.sharedNo}}</td>
+                    <td>{{products.createdAt | date:'medium'}}</td>
+                    <td>{{products.updatedAt | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="category.detail({id:products.categoryId})">{{products.categoryName}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="products.detail({id:products.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="products.edit({id:products.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="products.delete({id:products.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>
